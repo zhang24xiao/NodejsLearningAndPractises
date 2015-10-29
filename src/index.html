@@ -4,6 +4,17 @@
 	<title>hello~~~</title>
 </head>
 <body>
-Hello world
+<form action="http://127.0.0.1:1088/process_post" method="POST">
+	First name: <input type="text" name="first_name"><br>
+	Last name : <input type="text" name="last_name"><br>
+	<input type="submit" value="Submit">
+</form>
+<form action="/file_upload" method="POST" enctype="multipart/form-data">
+	<br>
+	Test upload file.
+	<input type="file" name="image" size="50" />
+	<br>
+	<input type="submit" value="Upload" />
+</form>
 </body>
 </html>
