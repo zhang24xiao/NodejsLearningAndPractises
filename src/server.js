@@ -8,7 +8,16 @@ var app = express();
 var urlEncoderParser = bodyParser.urlencoded({extended: false});
 
 app.use(express.static('public'));
-app.use(multer());
+
+// var mMulter = multer({
+// 	dest: './uploads/'
+// });
+app.use(multer({
+	dest: './uploads/',
+	rename: function(fieldname, filename) {
+		return filename.replace(/\W+/g, '-').toLowerCase() + Date.now()
+	}
+}));
 
 app.get('/index.html', function(req, res) {
 	res.sendFile(__dirname + "/" + "index.html");
@@ -25,7 +34,7 @@ app.post('/process_post', urlEncoderParser, function(req, res) {
 });
 
 // file upload
-app.post("/file_upload", function(req, res) {
+app.post('/file_upload', function(req, res) {
 	console.log(req.files[0]);
 
 	var dest_file = __dirname + '/' + req.files[0].originalname;
