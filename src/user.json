@@ -1,0 +1,22 @@
+{
+	"user1": {
+		"name": "mahana",
+		"password": "dhtid123",
+		"profession": "teacher",
+		"id": 1
+	},
+
+	"user2": {
+		"name": "obama",
+		"password": "34kdiel",
+		"profession": "president",
+		"id": 2
+	},
+
+	"user3": {
+		"name": "justinBeiber",
+		"password": "zidpe",
+		"profession": "singer",
+		"id": 3
+	},
+}
