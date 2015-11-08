@@ -9,11 +9,7 @@ function start(route, handler) {
 		console.log("pathname is: " + pathName);
 		if(req.url != '/favicon.ico')
 		{
-			route(handler, pathName);
-
-			res.writeHead(200, {"Content-Type": "text/plain"});
-			res.write("hello world.");
-			res.end();
+			route(handler, pathName, res);
 		}
 		
 	}).listen(1088);
